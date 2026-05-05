@@ -1,0 +1,4 @@
+interface:
+  display_name: "TFT DoubleUp Product"
+  short_description: "Plan TFT Double Up matching flows and UI"
+  default_prompt: "Use $tft-doubleup-product to plan a TFT Double Up teammate matching feature or Figma design."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "TFT DoubleUp Figma Design"
+  short_description: "Create TFT Double Up Figma screens"
+  default_prompt: "Use $tft-doubleup-figma-design to create or refine TFT Double Up matching screens in Figma."

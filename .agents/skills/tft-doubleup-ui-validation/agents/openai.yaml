@@ -1,0 +1,4 @@
+interface:
+  display_name: "TFT DoubleUp UI Validation"
+  short_description: "Validate and iterate TFT Double Up UI quality"
+  default_prompt: "Use $tft-doubleup-ui-validation to inspect a TFT Double Up UI and iterate until it passes quality checks."

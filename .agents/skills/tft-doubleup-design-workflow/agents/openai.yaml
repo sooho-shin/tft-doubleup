@@ -1,0 +1,4 @@
+interface:
+  display_name: "TFT DoubleUp Design Workflow"
+  short_description: "기획 docs 수정, Figma 반영, UI 검증 반복"
+  default_prompt: "Use $tft-doubleup-design-workflow to update product planning docs, revise the project Figma design, and iterate UI validation until it passes."
