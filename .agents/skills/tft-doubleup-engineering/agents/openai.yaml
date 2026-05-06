@@ -1,0 +1,4 @@
+interface:
+  display_name: "TFT DoubleUp Engineering"
+  short_description: "모노레포, API, DB, 하네스 구현 기준"
+  default_prompt: "Use $tft-doubleup-engineering to design or implement the TFT DoubleUp monorepo, API, database, and harness."

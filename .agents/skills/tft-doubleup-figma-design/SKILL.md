@@ -40,6 +40,18 @@ description: 이 저장소 안에서 Figma MCP와 figma-skills를 사용해 TFT 
 
 4. 프로젝트 기준 Figma 파일은 `references/figma-file-link.md`에 저장된 링크를 우선 사용한다.
 
+### Figma MCP 실행 방식
+
+Figma 파일을 만들거나 수정할 때는 기본적으로 Codex가 직접 `use_figma`를 순차 호출한다.
+
+- `ooo ralph`, Ouroboros evolve, 병렬 worker처럼 여러 하위 세션이 동시에 Figma MCP를 호출하는 방식은 사용자가 명시적으로 요청하지 않는 한 사용하지 않는다.
+- Figma MCP 연결 확인은 `whoami` → 기준 파일 read-only `use_figma` 조회 → 필요한 경우 `get_libraries` 순서로 한다.
+- `get_metadata`의 root node 조회가 실패해도 곧바로 연결 실패로 판단하지 않는다. 같은 fileKey에 대해 read-only `use_figma`가 성공하면 파일 접근은 가능한 것으로 보고, 이후 작업도 `use_figma` 중심으로 진행한다.
+- 한 번의 `use_figma` 호출에서 전체 파일을 크게 재작성하지 않는다. 페이지 생성, Foundation/Atoms 정리, Template 수정, Page 프레임 생성, 검증처럼 작은 단계로 나눈다.
+- 각 수정 단계가 끝나면 read-only `use_figma`로 페이지/프레임 존재와 childCount를 확인한 뒤 다음 단계로 넘어간다.
+- `user cancelled MCP tool call`, 권한 오류, 빈 children 조회 같은 비정상 응답이 나오면 자동 재시도 루프를 돌리지 말고 즉시 중단해 원인과 마지막으로 성공한 단계를 보고한다.
+- 병렬 호출이 필요한 특수 상황이라도 같은 Figma fileKey를 대상으로 한 `use_figma` 쓰기 호출은 동시에 실행하지 않는다.
+
 5. 새 Figma 파일을 만들 때는 사용자의 명시 요청이 있거나, 작업 목적상 새 파일이 필요한 경우에만 만든다.
    - 파일 이름에는 `TFT DoubleUp`과 산출물 목적을 포함한다.
    - 파일 생성 후에는 이후 작업에 `file_key`를 사용한다.

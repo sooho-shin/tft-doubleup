@@ -13,6 +13,10 @@ required_files=(
   "docs/product/design-direction.md"
   "docs/domain.md"
   "docs/decisions/0001-tech-stack.md"
+  "docs/decisions/0002-monorepo-api-database.md"
+  "docs/engineering/monorepo.md"
+  "docs/engineering/database.md"
+  "docs/engineering/harness-engineering.md"
 )
 
 for file in "${required_files[@]}"; do

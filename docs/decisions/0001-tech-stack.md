@@ -2,7 +2,9 @@
 
 ## 상태
 
-제안됨
+부분 채택
+
+`0002-monorepo-api-database.md`에서 모노레포, API, 데이터베이스 선택을 구체화했다. 이 문서는 초기 후보와 재검토 조건을 남기고, 실제 구현 기준은 최신 결정 문서를 우선한다.
 
 ## 맥락
 
@@ -26,12 +28,12 @@
 - Mocking: MSW
 - Formatting/linting: ESLint, Prettier
 
-백엔드는 MVP 초기에 아래 중 하나로 결정한다.
+백엔드는 MVP 초기에 아래 중 하나를 후보로 두었으나, 현재 구현 기준은 `0002-monorepo-api-database.md`를 따른다.
 
 - 옵션 A: Next.js Route Handlers와 파일/메모리 mock 데이터로 시작
 - 옵션 B: Supabase Postgres와 Row Level Security로 시작
 
-실제 사용자 계정, 신청 수락, 연락처 보호까지 MVP에 포함하려면 옵션 B를 우선 검토한다. UI와 흐름 검증이 먼저라면 옵션 A로 시작한 뒤 Supabase로 옮긴다.
+현재 결정은 프론트와 API를 분리하고, Hono API와 PostgreSQL/Drizzle을 기준으로 시작하는 것이다. 실제 사용자 계정 단계에서는 Supabase Auth와 Supabase Postgres를 우선 검토한다.
 
 ## 이유
 

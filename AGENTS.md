@@ -28,6 +28,7 @@
 - 제품 기획, 사용자 흐름, UX 문구를 다룰 때는 `tft-doubleup-product` 스킬을 우선 확인한다.
 - Figma 디자인 파일, 화면, 컴포넌트, 디자인 토큰을 만들거나 수정할 때는 `tft-doubleup-figma-design` 스킬을 사용한다.
 - 구현 UI나 Figma UI의 레이아웃, 타이포, 반응형, 시각적 깨짐을 검증할 때는 `tft-doubleup-ui-validation` 스킬을 사용한다.
+- 모노레포, 프론트엔드/백엔드 분리, API, PostgreSQL/Drizzle, 하네스 스크립트, 테스트 구조를 다룰 때는 `tft-doubleup-engineering` 스킬을 사용한다.
 
 ## 검증 규칙
 

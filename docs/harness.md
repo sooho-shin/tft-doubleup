@@ -11,6 +11,10 @@
 - `docs/product/design-direction.md`: 시각 방향과 핵심 컴포넌트
 - `docs/domain.md`: 핵심 도메인 모델과 상태값
 - `docs/decisions/0001-tech-stack.md`: 초기 기술스택 결정
+- `docs/decisions/0002-monorepo-api-database.md`: 모노레포, API, DB 기준
+- `docs/engineering/monorepo.md`: 프론트/백엔드 분리 모노레포 구조
+- `docs/engineering/database.md`: PostgreSQL/Drizzle 데이터베이스 기준
+- `docs/engineering/harness-engineering.md`: 검증 스크립트와 테스트 계층 기준
 - `scripts/check.sh`: 코드 변경 후 기본 검증
 - `scripts/validate-ui.sh`: UI 변경 후 브라우저/화면 검증
 - `scripts/qa.sh`: 배포 전 통합 점검
@@ -23,9 +27,10 @@
 4. 시각 방향이나 컴포넌트 기준이 바뀌면 `docs/product/design-direction.md`를 갱신한다.
 5. 데이터 필드나 상태값이 바뀌면 `docs/domain.md`를 같이 갱신한다.
 6. 기술스택이나 아키텍처 선택이 바뀌면 `docs/decisions/`에 결정 문서를 추가한다.
-7. 구현 후에는 `./scripts/check.sh`를 실행한다.
-8. UI 변경이 있으면 `./scripts/validate-ui.sh`를 실행한다.
-9. 릴리즈 전에는 `./scripts/qa.sh`를 실행한다.
+7. 모노레포, API, DB, 테스트 구조가 바뀌면 `docs/engineering/` 문서를 같이 갱신한다.
+8. 구현 후에는 `./scripts/check.sh`를 실행한다.
+9. UI 변경이 있으면 `./scripts/validate-ui.sh`를 실행한다.
+10. 릴리즈 전에는 `./scripts/qa.sh`를 실행한다.
 
 ## 앱 생성 전 기준
 
