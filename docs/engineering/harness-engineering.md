@@ -39,16 +39,21 @@ pnpm run check
 모노레포 생성 후 기대 동작:
 
 ```text
-pnpm run validate:ui
+pnpm --filter @tft-doubleup/web validate:ui
 ```
 
 `apps/web`의 Playwright 검증은 최소 아래를 확인한다.
 
 - 데스크톱 매칭 보드가 첫 화면에 표시됨
-- 모바일 매칭 보드에서 하단 액션바가 viewport 안에 있음
+- 모바일 매칭 보드가 viewport 안에 있음
+- 화면 배경과 정보 패널이 Figma 기준의 다크 정보형 UI 톤을 따름
+- 밝은 스캐폴딩/placeholder UI가 남아 있으면 실패함
+- 모집 카드가 smoke 수준이 아니라 실제 리스트 밀도를 가짐
 - 모집 카드 텍스트가 겹치지 않음
 - MVP 제외 문구가 노출되지 않음
-- 필터 적용/초기화가 동작함
+- 데스크톱/모바일에서 horizontal overflow가 없음
+
+현재 Figma-to-Web 구현이 완료되기 전에는 `scripts/validate-ui.sh`가 실패할 수 있다. 이 실패는 하네스 오류가 아니라, Figma 기준 UI가 아직 `apps/web`에 반영되지 않았다는 신호다. `tft-doubleup-figma-to-web-implementation` 스킬을 사용해 구현한 뒤 이 명령을 통과시킨다.
 
 ### scripts/qa.sh
 
@@ -141,5 +146,7 @@ pnpm install --frozen-lockfile
 pnpm run check
 pnpm run validate:ui
 ```
+
+Figma-to-Web 구현 전에는 `validate:ui`가 실패하도록 유지한다. 임시 UI를 통과시키기 위해 Playwright 기대값을 완화하지 않는다.
 
 DB가 필요한 테스트는 로컬 Docker 또는 CI service container가 준비된 뒤 활성화한다. 준비 전에는 DB 통합 테스트를 unit test처럼 위장하지 않는다.

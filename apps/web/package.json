@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit --project tsconfig.json",
     "test": "vitest run --passWithNoTests",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
-    "validate:ui": "../../scripts/validate-ui.sh"
+    "validate:ui": "playwright test"
   },
   "dependencies": {
     "@tft-doubleup/config": "workspace:*",
@@ -20,12 +20,13 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^15.3.3",
+    "@playwright/test": "^1.59.1",
     "@types/node": "^22.15.29",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "eslint": "^9.28.0",
-    "typescript-eslint": "^8.33.1",
     "typescript": "^5.8.3",
+    "typescript-eslint": "^8.33.1",
     "vitest": "^3.1.4"
   }
 }
