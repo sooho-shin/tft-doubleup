@@ -6,5 +6,6 @@ cd "$ROOT_DIR"
 
 "$ROOT_DIR/scripts/check.sh"
 "$ROOT_DIR/scripts/validate-ui.sh"
+"$ROOT_DIR/scripts/validate-db.sh"
 
 echo "QA 하네스 완료"

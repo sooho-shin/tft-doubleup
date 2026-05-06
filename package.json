@@ -1,0 +1,19 @@
+{
+  "name": "tft-doubleup",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @tft-doubleup/api --filter @tft-doubleup/web dev",
+    "build": "pnpm --filter @tft-doubleup/domain build && pnpm --filter @tft-doubleup/db build && pnpm --filter @tft-doubleup/config build && pnpm --filter @tft-doubleup/api build && pnpm --filter @tft-doubleup/web build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "validate:ui": "pnpm --filter @tft-doubleup/web validate:ui",
+    "validate:db": "./scripts/validate-db.sh",
+    "db:migrate": "pnpm --filter @tft-doubleup/db db:migrate",
+    "db:seed": "pnpm --filter @tft-doubleup/db db:seed"
+  },
+  "devDependencies": {}
+}

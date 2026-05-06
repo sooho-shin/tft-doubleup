@@ -1,0 +1,322 @@
+:root {
+  color-scheme: light;
+  --background: #f4f6f9;
+  --foreground: #172033;
+  --muted: #667085;
+  --surface: #ffffff;
+  --surface-muted: #eef2f7;
+  --border: #d7dde8;
+  --primary: #2454c6;
+  --primary-dark: #183c92;
+  --success: #13795b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family:
+    Arial,
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    sans-serif;
+}
+
+button {
+  min-height: 40px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--primary);
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 0 16px;
+}
+
+.shell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
+.brand {
+  white-space: nowrap;
+}
+
+.navItems {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  flex: 1;
+  gap: 18px;
+  justify-content: flex-end;
+}
+
+.navButton {
+  background: transparent;
+  color: var(--muted);
+  min-height: auto;
+  padding: 8px 0;
+}
+
+.primaryAction {
+  white-space: nowrap;
+}
+
+.summary {
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 28px auto 0;
+  max-width: 1180px;
+  padding: 24px;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.summary h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 6px 0 0;
+}
+
+.metrics {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(96px, 1fr));
+  margin: 0;
+}
+
+.metrics div {
+  background: var(--surface-muted);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.metrics dt {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.metrics dd {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 4px 0 0;
+}
+
+.quickFilters {
+  align-items: end;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: minmax(240px, 1fr) 2fr;
+  margin: 16px auto 0;
+  max-width: 1180px;
+}
+
+.searchField {
+  display: grid;
+  gap: 8px;
+}
+
+.searchField span,
+.sectionHeader span,
+.filterGroup span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.searchField input {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--foreground);
+  font: inherit;
+  min-height: 42px;
+  padding: 0 12px;
+}
+
+.filterChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filterChips button,
+.secondaryAction {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.board {
+  align-items: start;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 220px minmax(0, 1fr) 260px;
+  margin: 16px auto 0;
+  max-width: 1180px;
+}
+
+.filterPanel,
+.sidePanel,
+.roomCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.filterPanel,
+.sidePanel {
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+}
+
+.filterPanel h2,
+.sidePanel h2,
+.sectionHeader h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.filterGroup {
+  display: grid;
+  gap: 4px;
+}
+
+.roomList {
+  display: grid;
+  gap: 12px;
+}
+
+.sectionHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.roomCard {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+}
+
+.roomMeta {
+  color: var(--success);
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.roomCard h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.roomCard p {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  background: var(--surface-muted);
+  border-radius: 6px;
+  color: var(--primary-dark);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 8px;
+}
+
+.cardFooter {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.cardFooter span,
+.sidePanel p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.sidePanel section {
+  display: grid;
+  gap: 8px;
+}
+
+@media (max-width: 720px) {
+  .shell {
+    padding: 16px;
+  }
+
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .navItems {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .summary,
+  .quickFilters,
+  .board,
+  .cardFooter {
+    grid-template-columns: 1fr;
+  }
+
+  .summary,
+  .cardFooter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .summary h1 {
+    font-size: 28px;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filterPanel,
+  .sidePanel {
+    display: none;
+  }
+
+  .roomCard h3 {
+    font-size: 18px;
+  }
+}

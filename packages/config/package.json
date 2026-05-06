@@ -1,0 +1,29 @@
+{
+  "name": "@tft-doubleup/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "eslint/*.mjs",
+    "package.json",
+    "tsconfig/*.json"
+  ],
+  "exports": {
+    "./eslint/base": "./eslint/base.mjs",
+    "./eslint/next": "./eslint/next.mjs",
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/next.json": "./tsconfig/next.json",
+    "./tsconfig/node.json": "./tsconfig/node.json",
+    "./tsconfig/package.json": "./tsconfig/package.json"
+  },
+  "dependencies": {
+    "@next/eslint-plugin-next": "^15.3.3",
+    "typescript-eslint": "^8.33.1"
+  },
+  "scripts": {
+    "build": "echo \"@tft-doubleup/config: shared config files only.\"",
+    "lint": "node --check eslint/base.mjs && node --check eslint/next.mjs",
+    "test": "node test/smoke.test.mjs",
+    "typecheck": "echo \"@tft-doubleup/config: no TypeScript sources yet.\""
+  }
+}
